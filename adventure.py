@@ -1,4 +1,4 @@
-from data import locations
+from data import *
 
 directions = {
     'west': (-1, 0),
@@ -7,11 +7,23 @@ directions = {
     'south': (0, 1),
 }
 
+
+def game_map():
+    pos = ['H', 'P', 'L', 'M']
+    for i in range(4):
+        map_loc = ['market', 'lake', 'park', 'house']
+        if location == map_loc[i]:
+            pos[i] = ' '
+    return '\n ----- \n| %s %s |\n| %s %s |\n ----- ' % (pos[0], pos[1], pos[2], pos[3])
+
+
 position = (0, 0)
 
 while True:
     location = locations[position]
     print 'you are at the %s' % location
+
+    print game_map()
 
     valid_directions = {}
     for k, v in directions.iteritems():
@@ -30,5 +42,5 @@ while True:
         else:
             print 'invalid direction!'
             direction = raw_input('choose a valid direction:\n')
-
+    print 'going %s...\n' % direction
     position = valid_directions[direction]
