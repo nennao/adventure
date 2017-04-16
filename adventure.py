@@ -18,6 +18,7 @@ def game_map():
 
 
 position = (0, 0)
+inventory = []
 
 while True:
     location = locations[position]
@@ -34,6 +35,29 @@ while True:
             print 'to the %s is a %s' % (k, possible_location)
             valid_directions[k] = possible_position
 
+    print '\nin the %s you find: %s' % (location, ', '.join(objects[location]))
+
+    pick_up = raw_input('would you like to pick anything up? (y/n)\n')
+
+    while pick_up != 'y' and pick_up != 'n':
+        pick_up = raw_input('choose y or n: ')
+
+    while pick_up == 'y':
+        pick_obj = raw_input('choose object: ')
+
+        while pick_obj not in objects[location]:
+            pick_obj = raw_input("that's not here, pick again: ")
+
+        if location != 'house':
+            objects[location].remove(pick_obj)
+
+        inventory.append(pick_obj)
+        print 'your inventory: [%s]' % ', '.join(inventory)
+
+        pick_up = raw_input('anything else? (y/n)\n')
+        while pick_up != 'y' and pick_up != 'n':
+            pick_up = raw_input('choose y or n: ')
+
     direction = raw_input('which direction do you want to go?\n')
 
     while direction not in valid_directions:
@@ -43,5 +67,6 @@ while True:
         else:
             print 'invalid direction!'
             direction = raw_input('choose a valid direction:\n')
-    print 'going %s...\n' % direction
+
+    print '\n going %s...\n' % direction
     position = valid_directions[direction]

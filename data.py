@@ -11,3 +11,10 @@ describe = {
     'park': ' - quiet and serene',
     'market': ' - trade items here',
 }
+
+objects = {
+    'house': ['money', 'food', 'bandage'],
+    'lake': ['water', 'fish'],
+    'park': ['wood', 'rocks', 'dog'],
+    'market': ['fishing rod', 'bone', 'knife'],
+}
