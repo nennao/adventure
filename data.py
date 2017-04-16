@@ -9,7 +9,7 @@ describe = {
     'house': ' - an old cottage',
     'lake': ' - known for its strange wildlife',
     'park': ' - quiet and serene',
-    'market': ' - trade items here',
+    'market': ' - buy items with money here',
 }
 
 objects = {

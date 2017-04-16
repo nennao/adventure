@@ -43,16 +43,40 @@ while True:
         pick_up = raw_input('choose y or n: ')
 
     while pick_up == 'y':
-        pick_obj = raw_input('choose object: ')
+        if location == 'market':
+            pick_obj = raw_input('choose item: buy ')
+        else:
+            pick_obj = raw_input('choose item: ')
 
-        while pick_obj not in objects[location]:
+        while pick_obj not in objects[location] and pick_obj != 'cancel':
             pick_obj = raw_input("that's not here, pick again: ")
 
-        if location != 'house':
-            objects[location].remove(pick_obj)
+        if pick_obj == 'fish':
+            if 'fishing rod' not in inventory:
+                print 'need fishing rod to get fish. buy it from the market.\n'
+                pick_up = raw_input('anything else? (y/n)\n')
+                continue
 
-        inventory.append(pick_obj)
-        print 'your inventory: [%s]' % ', '.join(inventory)
+        if pick_obj == 'dog':
+            if 'bone' not in inventory:
+                print 'need bone to get dog. buy it from the market.\n'
+                pick_up = raw_input('anything else? (y/n)\n')
+                continue
+
+        if location != 'market':
+            inventory.append(pick_obj)
+            if location == 'park':
+                objects[location].remove(pick_obj)
+
+        if location == 'market':
+            if 'money' in inventory:
+                objects[location].remove(pick_obj)
+                inventory.remove('money')
+                inventory.append(pick_obj)
+            else:
+                print 'need money to buy this item.'
+
+        print '\n your inventory: [%s]\n' % ', '.join(inventory)
 
         pick_up = raw_input('anything else? (y/n)\n')
         while pick_up != 'y' and pick_up != 'n':
