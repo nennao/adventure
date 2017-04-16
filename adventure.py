@@ -22,6 +22,7 @@ position = (0, 0)
 while True:
     location = locations[position]
     print 'you are at the %s' % location
+    print describe[location]
 
     print game_map()
 
