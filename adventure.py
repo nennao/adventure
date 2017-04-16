@@ -22,4 +22,13 @@ while True:
             valid_directions[k] = possible_position
 
     direction = raw_input('which direction do you want to go?\n')
+
+    while direction not in valid_directions:
+        if direction in directions:
+            print 'out of area!'
+            direction = raw_input('choose another direction:\n')
+        else:
+            print 'invalid direction!'
+            direction = raw_input('choose a valid direction:\n')
+
     position = valid_directions[direction]
