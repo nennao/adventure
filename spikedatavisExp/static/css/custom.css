@@ -1,0 +1,36 @@
+.current-text {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+}
+
+.history-text {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+}
+
+.whitespace {
+    height: 500px;
+    background-color: #fff;
+}
+
+#average-runtime-nd{
+   font-size: 40px;
+}
+
+.dc-chart th {
+text-align: left
+}
+.dc-chart th,.dc-chart td {
+  padding-left: 10px;
+}
+.dc-chart tr.dc-table-group td {
+  padding-top: 4px;
+  border-bottom: 1px solid black;
+}
+.dc-chart select {
+  width: 150px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="en">
+<head>
+  <title>Rec Runtime Data Vis</title>
+  <link rel="stylesheet" href="static/lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" href="static/lib/css/dc.css">
+  <link rel="stylesheet" href="static/css/custom.css">
+</head>
+
+<body class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">hi!</a>
+      </div>
+      <div class="nav navbar-nav navbar-right" style="padding-right: 25px;">
+        <div id="average-runtime-nd" style="color: #fbfbfb;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----- GRAPH 1 ----- -->
+  <div id="outer" class="container-fluid">
+    <div class="row">
+
+      <!-- unique rec vs time bar chart -->
+      <div class="col-sm-8">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            rec vs runtime
+          </div>
+          <div class="chart-stage">
+            <div id="unique-time-chart">
+              <span class="unique-time-text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end bar chart -->
+
+      <div class="col-sm-4">
+          <!-- rec multi select -->
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            rec name
+          </div>
+          <div class="chart-stage">
+            <div id="selectRecName"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            sub rec name
+          </div>
+          <div class="chart-stage">
+            <div id="selectSubrecName"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            profile
+          </div>
+          <div class="chart-stage">
+            <div id="selectProfile"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            cobdate
+          </div>
+          <div class="chart-stage">
+            <div id="selectCobdate"></div>
+          </div>
+        </div>
+      </div>
+      <!-- rec multi select -->
+
+      </div>
+
+    </div>
+    <div class="row">
+
+      <!-- stage Pie -->
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            stage
+          </div>
+          <div class="chart-stage">
+            <div id="stage-pie-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end stage Pie -->
+
+      <!-- substage Pie -->
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            substage
+          </div>
+          <div class="chart-stage">
+            <div id="substage-pie-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end substage Pie -->
+
+    </div>
+  </div>
+  <!-- ----- end GRAPH 1 ----- -->
+
+
+
+  <hr>
+
+
+  <script src="static/lib/js/jquery.min.js"></script>
+  <script src="static/lib/js/bootstrap.min.js"></script>
+  <script src="static/lib/js/crossfilter.js"></script>
+  <script src="static/lib/js/d3.js"></script>
+  <script src="static/lib/js/dc.js"></script>
+  <script src="static/lib/js/queue.js"></script>
+  <script src="static/lib/js/keen.min.js"></script>
+  <script src="static/js/rawdataExp.js"></script>
+  <script src="static/js/graphExp.js"></script>
+</body>
+</html>
